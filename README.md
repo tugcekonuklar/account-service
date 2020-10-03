@@ -1,15 +1,15 @@
 # Money Transfer Service
 
-This is a sample project to show a use case sample for hexagonal architecture.
+This project was created as a use case sample for hexagonal architecture.
 
-This project provides endpoints to transfer money
+This project provides endpoint to transfer money from one account to another
 
-The Money Transfer  service provides data like below:
+The Account service provides data like below:
 
 * Sender Account Id
 * Receiver Account Id
 * Amount
-* Status
+* Result
 * Timestamp
 
 ### Endpoints
@@ -26,7 +26,7 @@ Transfer money
 {
    "senderAccountId":"123456788",
    "receiverAccountId":"123456789",
-   "amount":50
+   "amount":25
 }
 ```
 
@@ -35,11 +35,11 @@ Transfer money
 ```json
 {
     "id": 1,
-    "sender": "123456788",
-    "receiver": "123456789",
-    "amount": 50,
+    "senderAccountId": "123456788",
+    "receiverAccountId": "123456789",
+    "amount": 25,
     "result": "SUCCESSFUL",
-    "timeStamp": "2020-10-03T18:25:32.313180Z"
+    "timeStamp": "2020-10-03T20:41:16.799826Z"
 }
 ```
 
@@ -70,8 +70,7 @@ Runs tests
 Compiles application
 #### `mvn package`
 Creates package of application
-#### `mvn clear verify`
-Runs CheckStyle
+
 
 ## Running Application
 
@@ -91,4 +90,4 @@ Starts application
   - 123456788
   - 123456789
 
-* Only money transfer endpoint is open to give sample.
+* Only money transfer endpoint is created as an example.

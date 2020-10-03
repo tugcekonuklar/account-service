@@ -12,8 +12,8 @@ public class MoneyTransferConverter {
   public static MoneyTransferResponse toResponse(final Transfer transfer) {
     return MoneyTransferResponse.builder()
       .id(transfer.getId())
-      .sender(transfer.getSenderAccountId())
-      .receiver(transfer.getReceiverAccountId())
+      .senderAccountId(transfer.getSenderAccountId())
+      .receiverAccountId(transfer.getReceiverAccountId())
       .amount(transfer.getAmount())
       .timeStamp(transfer.getCreatedAt())
       .result(transfer.getResult())

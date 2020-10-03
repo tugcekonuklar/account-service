@@ -11,8 +11,8 @@ import java.time.Instant;
 @Builder
 public class MoneyTransferResponse {
   private Long id;
-  private String sender;
-  private String receiver;
+  private String senderAccountId;
+  private String receiverAccountId;
   private BigInteger amount;
   private TransferResult result;
   private Instant timeStamp;
