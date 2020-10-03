@@ -1,4 +1,4 @@
-# Money Transfer Service
+# Account Service
 
 This project was created as a use case sample for hexagonal architecture.
 

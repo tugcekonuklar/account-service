@@ -12,7 +12,7 @@
   <artifactId>account-service</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>account-service</name>
-  <description>Money Account Service</description>
+  <description>Account Service</description>
 
   <properties>
     <java.version>11</java.version>
