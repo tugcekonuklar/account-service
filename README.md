@@ -16,7 +16,7 @@ The Account service provides data like below:
 
 This service provides one endpoints for transfer money
 
-#### `POST /transfers`
+#### `POST /accounts/transfer`
 
 Transfer money
 
