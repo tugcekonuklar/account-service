@@ -77,7 +77,7 @@ Runs CheckStyle
 
 After you create package of the application, in the path of the application on terminal, write the command which is below to run application.
 
-#### `javac -jar target/money-transfer-service-0.0.1-SNAPSHOT.jar`
+#### `javac -jar target/account-service-0.0.1-SNAPSHOT.jar`
 
 ### Run with command:
 
