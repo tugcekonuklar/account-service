@@ -6,8 +6,8 @@ This project provides endpoints to transfer money
 
 The Money Transfer  service provides data like below:
 
-* Sender
-* Receiver
+* Sender Account Id
+* Receiver Account Id
 * Amount
 * Status
 * Timestamp
@@ -24,9 +24,9 @@ Transfer money
 
 ```json
 {
-   "sender":"John Doe",
-   "receiver":"Jane Doe",
-   "amount":100
+   "senderAccountId":"123456788",
+   "receiverAccountId":"123456789",
+   "amount":50
 }
 ```
 
@@ -35,11 +35,11 @@ Transfer money
 ```json
 {
     "id": 1,
-    "sender": "John Doe",
-    "receiver": "Jane Doe",
-    "amount": 100,
-    "status": "SUCCESSFUL",
-    "timeStamp": "2020-08-07T13:48:08.830936Z"
+    "sender": "123456788",
+    "receiver": "123456789",
+    "amount": 50,
+    "result": "SUCCESSFUL",
+    "timeStamp": "2020-10-03T18:25:32.313180Z"
 }
 ```
 
@@ -85,3 +85,10 @@ After you create package of the application, in the path of the application on t
 Starts application
 
 
+### Important Note:
+* This is a simple sample application.
+* When the application runs 2 dummy accounts inserting DB:
+  - 123456788
+  - 123456789
+
+* Only money transfer endpoint is open to give sample.
