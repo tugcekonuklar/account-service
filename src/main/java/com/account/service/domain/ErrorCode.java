@@ -16,6 +16,8 @@ public enum ErrorCode {
   INVALID_REQUEST(BAD_REQUEST, "Invalid client request : {0}"),
   INTERNAL_ERROR(INTERNAL_SERVER_ERROR, "Invalid server error"),
   ACCOUNT_NOT_FOUND(NOT_FOUND, "Account is not exist id : {0}"),
+  SENDER_ACCOUNT_NOT_FOUND(NOT_FOUND, "Sender Account is not exist id : {0}"),
+  RECEIVER_ACCOUNT_NOT_FOUND(NOT_FOUND, "Receiver Account is not exist id : {0}"),
   NOT_SUFFICIENT_BALANCE(BAD_REQUEST, "Sender has not enough money in account : {0}");
 
   private HttpStatus status;

@@ -5,9 +5,10 @@ import com.account.service.domain.ErrorResultException;
 import com.account.service.domain.Transfer;
 import com.account.service.domain.TransferResult;
 import com.account.service.repository.AccountRepository;
-import com.account.service.repository.InsertTransferCommand;
+import com.account.service.repository.command.InsertTransferCommand;
 import com.account.service.repository.TransferRepository;
-import com.account.service.repository.UpdateAccountCommand;
+import com.account.service.repository.command.UpdateAccountCommand;
+import com.account.service.service.command.SendMoneyCommand;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -19,17 +20,19 @@ import javax.validation.Valid;
 @Service
 @Validated
 @RequiredArgsConstructor
-public class TransferMoneyService implements TransferMoneyUseCase {
+public class TransferMoneyUseCaseImpl implements TransferMoneyUseCase {
 
   private final TransferRepository transferRepository;
   private final AccountRepository accountRepository;
 
   @Override
   public Transfer transferMoney(@Valid SendMoneyCommand command) {
-
+    log.info("Transfer money with command : {}", command);
     try {
-       var sender = accountRepository.findByAccountId(command.getSenderAccountId());
-       var receiver = accountRepository.findByAccountId(command.getReceiverAccountId());
+      var sender = accountRepository.findByAccountId(command.getSenderAccountId())
+        .orElseThrow(() -> ErrorCode.SENDER_ACCOUNT_NOT_FOUND.asErrorResult(command.getSenderAccountId()));
+      var receiver = accountRepository.findByAccountId(command.getReceiverAccountId())
+        .orElseThrow(() -> ErrorCode.RECEIVER_ACCOUNT_NOT_FOUND.asErrorResult(command.getSenderAccountId()));
 
       if (sender.getBalance().compareTo(command.getAmount()) < 0) {
         throw ErrorCode.NOT_SUFFICIENT_BALANCE.asErrorResult(command.getSenderAccountId());

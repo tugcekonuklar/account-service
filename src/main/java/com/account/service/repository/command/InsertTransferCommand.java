@@ -1,4 +1,4 @@
-package com.account.service.repository;
+package com.account.service.repository.command;
 
 import com.account.service.domain.TransferResult;
 import lombok.Builder;

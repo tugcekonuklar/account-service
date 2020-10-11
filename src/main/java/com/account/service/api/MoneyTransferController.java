@@ -2,7 +2,7 @@ package com.account.service.api;
 
 import com.account.service.api.dto.MoneyTransferRequest;
 import com.account.service.api.dto.MoneyTransferResponse;
-import com.account.service.service.TransferMoneyUseCase;
+import com.account.service.service.AccountService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,12 +19,13 @@ import static org.springframework.http.HttpStatus.CREATED;
 @RequestMapping(value = "accounts/transfer")
 public class MoneyTransferController {
 
-  private final TransferMoneyUseCase service;
+  private final AccountService service;
 
-  @PostMapping
+  @PostMapping()
   @ResponseStatus(CREATED)
   public MoneyTransferResponse transferMoney(@RequestBody final MoneyTransferRequest request) {
-    return MoneyTransferConverter.toResponse(service.transferMoney(MoneyTransferConverter.toCommand(request)));
+    log.info("Transfer money with request : {}", request);
+    return AccountApiConverter.toMoneyTransferResponse(service.transferMoney(AccountApiConverter.toCommand(request)));
   }
 
 }

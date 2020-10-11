@@ -2,6 +2,9 @@ package com.account.service.repository;
 
 import com.account.service.domain.Account;
 import com.account.service.domain.Transfer;
+import com.account.service.repository.command.InsertAccountCommand;
+import com.account.service.repository.command.InsertTransferCommand;
+import com.account.service.repository.command.UpdateAccountCommand;
 import com.account.service.repository.jpa.AccountEntity;
 import com.account.service.repository.jpa.TransferEntity;
 import lombok.experimental.UtilityClass;
@@ -48,6 +51,16 @@ public class RepositoryConverter {
   public static AccountEntity toAccountEntity(final UpdateAccountCommand command) {
     return AccountEntity.builder()
       .id(command.getId())
+      .balance(command.getBalance())
+      .name(command.getName())
+      .owner(command.getOwner())
+      .accountId(command.getAccountId())
+      .createdAt(Instant.now())
+      .build();
+  }
+
+  public static AccountEntity toAccountEntity(final InsertAccountCommand command) {
+    return AccountEntity.builder()
       .balance(command.getBalance())
       .name(command.getName())
       .owner(command.getOwner())
