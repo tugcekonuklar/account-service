@@ -1,6 +1,6 @@
 # Account Service
 
-This project was created as a use case sample for hexagonal architecture.
+This project was created as some use cases (CRUD and Transfer Money) sample for hexagonal architecture.
 
 This project provides endpoints for account domain CRUD actions and to transfer money from one account to another.
 
