@@ -2,23 +2,112 @@
 
 This project was created as a use case sample for hexagonal architecture.
 
-This project provides endpoint to transfer money from one account to another
+This project provides endpoints for account domain CRUD actions and to transfer money from one account to another.
 
 The Account service provides data like below:
 
+Account:
+* id
+* Account id
+* Account Name
+* Account Owner
+* Account Balance
+* Creation Time
+
+Transfer:
 * Sender Account Id
 * Receiver Account Id
 * Amount
 * Result
 * Timestamp
 
+
 ### Endpoints
 
-This service provides one endpoints for transfer money
+The service provides CRUD actions and money transfer endpoints
 
-#### `POST /accounts/transfer`
+### `POST /accounts`
 
-Transfer money
+Create a new account
+
+#### Request:
+
+```json
+{
+   "accountId": "123456789",
+   "name": "Main Account",
+   "owner": "John Doe",
+   "balance": 650
+}
+```
+
+#### Response:
+
+```json
+{
+   "id": 1,
+   "accountId": "123456789",
+   "name": "Main Account",
+   "owner": "John Doe",
+   "balance": 650,
+   "createdAt": "2020-10-11T20:56:59.606932Z"
+}
+```
+
+### `GET /accounts`
+
+Retrieve a list of all accounts
+
+#### Response:
+
+```json
+{
+   "accounts":[
+      {
+         "id":1,
+         "accountId":"123456789",
+         "name":"Main Account",
+         "owner":"John Doe",
+         "balance":650,
+         "createdAt":"2020-10-11T20:56:59.606932Z"
+      },
+      {
+         "id":2,
+         "accountId":"123456788",
+         "name":"Saving Account",
+         "owner":"Jane Doe",
+         "balance":750,
+         "createdAt":"2020-10-03T20:41:16.517256Z"
+      }
+   ]
+}
+```
+
+### `GET /accounts/{id}`
+
+Retrieve account by id
+
+#### Response:
+
+```json
+{
+   "id":1,
+   "accountId":"123456789",
+   "name":"Main Account",
+   "owner":"John Doe",
+   "balance":650,
+   "createdAt":"2020-10-11T20:56:59.606932Z"
+}
+```
+
+### `DELETE /accounts/{id}`
+
+Deletes account by id
+
+
+### `POST /accounts/transfer`
+
+Transfers money from one account to another
 
 #### Request:
 
@@ -52,6 +141,7 @@ Transfer money
 * Flyway
 * H2 Database
 * Docker
+* SwaggerUI
 
 
 ## Building Application
@@ -90,4 +180,4 @@ Starts application
   - 123456788
   - 123456789
 
-* Only money transfer endpoint is created as an example.
+* Some account service endpoints are created as example.
