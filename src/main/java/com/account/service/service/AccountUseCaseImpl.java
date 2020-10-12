@@ -18,7 +18,7 @@ import java.util.List;
 @Service
 @Validated
 @RequiredArgsConstructor
-public class AccountServiceImpl implements AccountService {
+public class AccountUseCaseImpl implements AccountUseCase {
   private final TransferMoneyUseCase transferMoneyUseCase;
   private final AccountRepository accountRepository;
 

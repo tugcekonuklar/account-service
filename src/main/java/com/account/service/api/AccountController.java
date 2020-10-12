@@ -3,7 +3,7 @@ package com.account.service.api;
 import com.account.service.api.dto.AccountRequest;
 import com.account.service.api.dto.AccountResponse;
 import com.account.service.api.dto.AccountsResponse;
-import com.account.service.service.AccountService;
+import com.account.service.service.AccountUseCase;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -27,7 +27,7 @@ import static org.springframework.http.HttpStatus.OK;
 @RequestMapping(value = "accounts")
 public class AccountController {
 
-  private final AccountService service;
+  private final AccountUseCase service;
 
   @PostMapping
   @ResponseStatus(CREATED)

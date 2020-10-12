@@ -8,7 +8,7 @@ import com.account.service.service.command.SendMoneyCommand;
 import javax.validation.Valid;
 import java.util.List;
 
-public interface AccountService {
+public interface AccountUseCase {
   Account retrieveAccountById(final Long id);
 
   List<Account> retrieveAccounts();
