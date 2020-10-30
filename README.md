@@ -181,3 +181,5 @@ Starts application
   - 123456789
 
 * Some account service endpoints are created as example.
+
+* Only functional tests added.
