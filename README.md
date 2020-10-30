@@ -144,6 +144,8 @@ Transfers money from one account to another
 * H2 Database
 * Docker
 * SwaggerUI
+* RestAssured
+* Junit 5
 
 
 ## Building Application
