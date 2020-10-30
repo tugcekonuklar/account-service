@@ -2,6 +2,8 @@
 
 This project was created as some use cases (CRUD and Transfer Money) sample for hexagonal architecture.
 
+Here, you can reach my Medium article about [Hexagonal (Ports & Adapter) Architecture.](https://medium.com/@TKonuklar/hexagonal-ports-adapters-architecture-e3617bcf00a0)
+
 This project provides endpoints for account domain CRUD actions and to transfer money from one account to another.
 
 The Account service provides data like below:
