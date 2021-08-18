@@ -23,9 +23,12 @@ Transfer:
 * Result
 * Timestamp
 
-# Note : 
+# Note:  
 
-If you like the soluion, dont forget to give a Star and follow. Thank you! 
+If you like the solution, please don't forget to give a star ⭐ and follow me. 
+
+Thank you! ❤️
+
 
 ### Endpoints
 
